@@ -1,3 +1,5 @@
+from typing import Optional
+
 from dependency_injector.wiring import Provide
 
 from myapp.container import ApplicationContainer
@@ -16,3 +18,6 @@ class TodoService:
     def add_tag(self, entry_id: str, tag: str) -> None:
         entry = self.todo_repository.get(entry_id)
         entry.set_tag(tag)
+
+    def get_all(self, search: Optional[str] = None) -> list[TodoEntry]:
+        return self.todo_repository.get_all(search)

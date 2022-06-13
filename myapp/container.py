@@ -1,10 +1,9 @@
-from dependency_injector import containers, providers
+from dependency_injector import providers, containers
 
 from myapp.application.todo_service import TodoService
 
 
-
-class Application
+class ApplicationContainer(containers.DeclarativeContainer):
     configuration = providers.Configuration()
 
     todo_entry_repository = providers.Singleton(
