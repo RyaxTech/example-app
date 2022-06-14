@@ -30,10 +30,6 @@ def setup(app: FastAPI, container: ApplicationContainer) -> None:
             description="My TODO app API'",
             routes=app.routes,
         )
-        openapi_schema["info"]["x-logo"] = {
-            # TODO: Put your logo here!
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/To_Do.svg/295px-To_Do.svg.png"
-        }
         if not container.configuration.api_prefix():
             openapi_schema["servers"] = [{"url": "/"}]
         else:

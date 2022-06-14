@@ -8,8 +8,11 @@ authors = ["Michael Mercier <michael.mercier@ryax.tech>"]
 python = "^3.9"
 dependency-injector = "^4.39.1"
 fastapi = "^0.78.0"
+uvicorn = "^0.17.6"
+pytest = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
+bandit = "^1.7.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

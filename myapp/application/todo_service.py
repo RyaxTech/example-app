@@ -1,14 +1,13 @@
+from dataclasses import dataclass
 from typing import Optional
 
-from dependency_injector.wiring import Provide
-
-from myapp.container import ApplicationContainer
 from myapp.domain.todo import TodoEntry
 from myapp.domain.todo_entry_repository import ITodoEntryRepository
 
 
+@dataclass
 class TodoService:
-    todo_repository: ITodoEntryRepository = Provide[ApplicationContainer.todo_service]
+    todo_repository: ITodoEntryRepository
 
     def add_entry(self, content: str) -> str:
         entry = TodoEntry.create_from_content(content)
